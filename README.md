@@ -22,13 +22,19 @@ SVM是一種監督式的學習方法，用統計風險最小化的原則來估�
 整體的流程為:
 1. 資料分割: 將dataset分成數筆local data，代表不同的參與者所擁有的資料。
 2. SVM + SSS: (圖六)
+
 (1) 分別計算local data的local kernel(LK)。
+
 (2) 每個LK生成一個隨機的random matrix(ex: 參與者A 生成r1)。
+
 (3) 每個LK將各自的random matrix透過Shamir’s Secret Sharing Algorithm傳給每個參與者
 (ex: A 擁有r1_a, B擁有r1_b, C 擁有r1_c, D 擁有r1_d)。
+
 (4) 此時，每個參與者都擁有自己及其他參與者生成的random matrix的一部分
    (ex: A有r1_a +r2_a +r3_a +r4_a)
+   
 (5) 參與者將擁有的random matrix相加，連同local kernel傳給cloud。
+
 (6) 此時，cloud擁有local matrix的總和及random matrix的總和，只要減掉random matrix的總和就可以得到 global kernel。
 
 ![](https://i.imgur.com/zlpErjq.png)
