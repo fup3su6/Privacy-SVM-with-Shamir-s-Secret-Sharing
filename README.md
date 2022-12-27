@@ -44,8 +44,11 @@ SVM是一種監督式的學習方法，用統計風險最小化的原則來估�
 表(一)為在3個參與者、每個參與者有10 feature的情況；表(二)為在10個參與者、每個參與者有3 feature的情況。
 
 以下記錄著三個階段的時間:
+
 1.各個local 產生亂數 + 分割shares 傳給各個local
+
 2.各個local把data轉成kernel matrix + 把拿到的shares加總傳給cloud的時間
+
 3.Cloud 把 2.收到的東西還原secret最後得到global kernel的時間
 
 ![](https://i.imgur.com/qaLxbuu.png)
